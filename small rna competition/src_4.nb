@@ -1,0 +1,222 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      7482,        212]
+NotebookOptionsPosition[      6989,        191]
+NotebookOutlinePosition[      7347,        207]
+CellTagsIndexPosition[      7304,        204]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"sol", " ", "=", "  ", 
+   RowBox[{"NDSolve", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"d", "'"}], "[", 
+         RowBox[{"t", ",", "x"}], "]"}], " ", "\[Equal]", " ", 
+        RowBox[{
+         RowBox[{"d", "[", 
+          RowBox[{"t", ",", "x"}], "]"}], 
+         RowBox[{"(", 
+          RowBox[{"1", "-", 
+           RowBox[{"d", "[", 
+            RowBox[{"t", ",", "x"}], "]"}]}], ")"}]}]}], ",", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"d", "'"}], "[", 
+         RowBox[{"t", ",", "0"}], "]"}], "\[Equal]", "20"}], ",", " ", 
+       RowBox[{
+        RowBox[{"d", "[", "0", "]"}], "\[Equal]", "1"}]}], "}"}], ",", "d", 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", "0", ",", "200"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "100"}], "}"}]}], "]"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot3D", "[", 
+  RowBox[{
+   RowBox[{"Evaluate", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"d", "'"}], "[", "t", "]"}], "/.", "sol"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "10"}], "}"}], ",", 
+   RowBox[{"PlotPoints", "\[Rule]", "60"}], ",", 
+   RowBox[{"MaxRecursion", "\[Rule]", "3"}], ",", 
+   RowBox[{"Mesh", "\[Rule]", "None"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.597238039159919*^9, 3.597238148264263*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"NDSolve", "::", "derlen"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"The length of the derivative operator \
+\[NoBreak]\\!\\(Derivative[1]\\)\[NoBreak] in \
+\[NoBreak]\\!\\(\\(\\(\\*SuperscriptBox[\\\"d\\\", \\\"\[Prime]\\\", \
+Rule[MultilineFunction, None]]\\)\\)[\\(\\(t, x\\)\\)]\\)\[NoBreak] is not \
+the same as the number of arguments. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/NDSolve/derlen\\\", \
+ButtonNote -> \\\"NDSolve::derlen\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.5972380838257647`*^9, 3.597238086176635*^9}, {
+  3.5972381291501493`*^9, 3.597238149667502*^9}}],
+
+Cell[BoxData[
+ RowBox[{"NDSolve", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       SuperscriptBox["d", "\[Prime]",
+        MultilineFunction->None], "[", 
+       RowBox[{"t", ",", "x"}], "]"}], "\[Equal]", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"1", "-", 
+         RowBox[{"d", "[", 
+          RowBox[{"t", ",", "x"}], "]"}]}], ")"}], " ", 
+       RowBox[{"d", "[", 
+        RowBox[{"t", ",", "x"}], "]"}]}]}], ",", 
+     RowBox[{
+      RowBox[{
+       SuperscriptBox["d", "\[Prime]",
+        MultilineFunction->None], "[", 
+       RowBox[{"t", ",", "0"}], "]"}], "\[Equal]", "20"}], ",", 
+     RowBox[{
+      RowBox[{"d", "[", "0", "]"}], "\[Equal]", "1"}]}], "}"}], ",", "d", ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "200"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "100"}], "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{{3.597238083847543*^9, 3.5972380861804667`*^9}, {
+  3.5972381291719227`*^9, 3.597238149669168*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"ReplaceAll", "::", "reps"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], \
+"\<\"\[NoBreak]\\!\\({\\(NDSolve[\\(\\(\\(\\({\\(\\(\\(\\(\\(\\(\\*\
+SuperscriptBox[\\\"d\\\", \\\"\[Prime]\\\", Rule[MultilineFunction, None]]\\)\
+\\)[\\(\\(t, x\\)\\)]\\)\\) \[Equal] \\(\\(\\(\\((1 - \\(\\(d[\\(\\(\
+\[LeftSkeleton] 2 \[RightSkeleton]\\)\\)]\\)\\))\\)\\)\\\\ \\(\\(d[\\(\\(t, x\
+\\)\\)]\\)\\)\\)\\)\\)\\), \\(\\(\\(\\(\\(\\(\\*SuperscriptBox[\\\"d\\\", \
+\\\"\[Prime]\\\", Rule[MultilineFunction, None]]\\)\\)[\\(\\(t, \
+0\\)\\)]\\)\\) \[Equal] 20\\)\\), \\(\\(\\(\\(d[0]\\)\\) \[Equal] 1\\)\\)}\\)\
+\\), d, \\(\\({t, 0, 200}\\)\\), \\(\\({x, 0, 100}\\)\\)\\)\\)]\\)}\\)\
+\[NoBreak] is neither a list of replacement rules nor a valid dispatch table, \
+and so cannot be used for replacing. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/ReplaceAll/reps\\\", \
+ButtonNote -> \\\"ReplaceAll::reps\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.5972380838257647`*^9, 3.597238086176635*^9}, {
+  3.5972381291501493`*^9, 3.597238149670154*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Plot3D", "::", "pllim"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Range specification \[NoBreak]\\!\\(PlotPoints \[Rule] \
+60\\)\[NoBreak] is not of the form {x, xmin, xmax}. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Plot3D/pllim\\\", ButtonNote -> \
+\\\"Plot3D::pllim\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.5972380838257647`*^9, 3.597238086176635*^9}, {
+  3.5972381291501493`*^9, 3.59723814967162*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Plot3D", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["d", "\[Prime]",
+      MultilineFunction->None], "[", "t", "]"}], "/.", "\[VeryThinSpace]", 
+    RowBox[{"NDSolve", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          SuperscriptBox["d", "\[Prime]",
+           MultilineFunction->None], "[", 
+          RowBox[{"t", ",", "x"}], "]"}], "\[Equal]", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"1", "-", 
+            RowBox[{"d", "[", 
+             RowBox[{"t", ",", "x"}], "]"}]}], ")"}], " ", 
+          RowBox[{"d", "[", 
+           RowBox[{"t", ",", "x"}], "]"}]}]}], ",", 
+        RowBox[{
+         RowBox[{
+          SuperscriptBox["d", "\[Prime]",
+           MultilineFunction->None], "[", 
+          RowBox[{"t", ",", "0"}], "]"}], "\[Equal]", "20"}], ",", 
+        RowBox[{
+         RowBox[{"d", "[", "0", "]"}], "\[Equal]", "1"}]}], "}"}], ",", "d", 
+      ",", 
+      RowBox[{"{", 
+       RowBox[{"t", ",", "0", ",", "200"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", "0", ",", "100"}], "}"}]}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "10"}], "}"}], ",", 
+   RowBox[{"PlotPoints", "\[Rule]", "60"}], ",", 
+   RowBox[{"MaxRecursion", "\[Rule]", "3"}], ",", 
+   RowBox[{"Mesh", "\[Rule]", "None"}]}], "]"}]], "Output",
+ CellChangeTimes->{{3.597238083847543*^9, 3.5972380861804667`*^9}, {
+  3.5972381291719227`*^9, 3.597238149672724*^9}}]
+}, Open  ]]
+},
+WindowSize->{740, 574},
+WindowMargins->{{Automatic, 259}, {Automatic, 36}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (February 23, \
+2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 1409, 41, 88, "Input"],
+Cell[1991, 65, 735, 14, 40, "Message"],
+Cell[2729, 81, 1006, 29, 27, "Output"],
+Cell[3738, 112, 1169, 20, 59, "Message"],
+Cell[4910, 134, 564, 11, 23, "Message"],
+Cell[5477, 147, 1496, 41, 43, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

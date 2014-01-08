@@ -1,0 +1,96 @@
+import Bio
+>>>
+from Bio import Seq
+>>>
+from Bio import SeqRecord
+>>>
+my_seq = Seq.Seq("CGACGGACTCAG", IUPAC.unambiguous_dna)
+>>>
+my_seq_r = SeqRecord.SeqRecord(my_seq)
+>>>
+my_seq_r
+SeqRecord(seq=Seq('CGACGGACTCAG', Alphabet()), id='<unknown id>',
+name='<unknown name>', description='<unknown description>',
+dbxrefs=[])
+>>>
+my_seq_r.seq
+Seq('CGACGGACTCAG', Alphabet())
+>>>
+my_seq_r.id
+'<unknown id>'
+>>>
+my_seq_r.id = "AC12345"
+>>>
+my_seq_r.description = "My gene"
+
+my_seq_r = SeqRecord.SeqRecord(my_seq, \
+... id="AC12345",description="My gene")
+
+my_seq_r.annotations
+{}
+>>>
+my_seq_r.annotations["origin"] = "mouse"
+>>>
+my_seq_r.annotations["date"] = "2011-04-28"
+>>>
+my_seq_r.annotations
+{'origin': 'mouse', 'date': '2011-04-28'}
+>>>
+print my_seq_r.annotations["origin"]
+mouse
+
+my_seq_r.letter_annotations["phred scores"] = \
+... [20,34,40,12,22,20,20,20,34,40,12,22]
+>>>
+my_seq_r.letter_annotations["conservation"] = \
+... [0.5,0.3,1,1,0.8,0.9,1,1]
+
+print my_seq_r.format("fasta")
+>AC12345 My gene
+CGACGGACTCAG
+>>>
+print my_seq_r.format("genbank")
+LOCUS AC12345 12 bp DNA
+UNK 01-JAN-1980
+DEFINITION My gene
+ACCESSION AC12345
+VERSION AC12345
+KEYWORDS .
+SOURCE .
+ORGANISM .
+.
+FEATURES Location/Qualifiers
+ORIGIN
+1 cgacggactc ag
+//
+
+left_seq_r = my_seq_r[:5]
+>>>
+left_seq_r.seq
+Seq('CGACG', IUPACUnambiguousDNA())
+>>>
+left_seq_r.letter_annotations["phred scores"]
+[20, 34, 40, 12, 22]
+>>>
+left_seq_r.annotations
+
+my_seq_2 = \
+... Seq.Seq("ACGTGTCATACA",IUPAC.unambiguous_dna)
+>>>
+my_seq_r2 = SeqRecord.SeqRecord(my_seq_2, \
+... id="AC12345",description="A gene fragment")
+>>>
+my_seq_r2.letter_annotations["phred scores"] \
+... = [10,20,30,12,15,21,23,45,32,32,30,11]
+>>>
+my_seq_c = my_seq_r + my_seq_r2
+>>>
+my_seq_c.id
+'AC12345'
+>>>
+my_seq_c.letter_annotations
+{'phred scores': [20, 34, 40, 12, 22, 20, 20, 20, 34, 40, 12, 22,
+10, 20, 30, 12, 15, 21, 23, 45, 32, 32, 30, 11]}
+>>>
+my_seq_c.annotations
+{}
